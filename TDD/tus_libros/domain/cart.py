@@ -1,7 +1,6 @@
-from abc import ABCMeta
 from datetime import datetime, timedelta
 
-class Cart(metaclass=ABCMeta):
+class Cart:
     def __init__(self):
         self._books = []
         self._created_at = datetime.utcnow()
