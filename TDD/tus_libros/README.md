@@ -20,7 +20,7 @@
   
 # Primer Iteración
 
-- Pensamos a través de una metáfora
+- Pensamos a través de una metáfora -> Supermercado
   - primero, está el carrito vacio
   - segundo, agrego algo al carrito
   - No puedo agregar un producto que no esta en el supermercado
