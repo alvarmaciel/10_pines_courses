@@ -1,4 +1,4 @@
-# Primer iteración.
+# Inicio.
 
 - Empezar por los modelos
   - Cliente
@@ -16,3 +16,19 @@
     - test_c -> /createCart verificar creación y tiempo de vida
       - verificar que en el cualquier momento de los 30 minutos el carrito existe con la data correcta
       - verificar que a los 31' el carrito desaparece
+    
+  
+# Primer Iteración
+
+- Pensamos a través de una metáfora -> Supermercado
+  - primero, está el carrito vacio
+  - segundo, agrego algo al carrito
+  - No puedo agregar un producto que no esta en el supermercado
+- si lo pienso en BDD:
+  - Feature: Add things to a cart
+  - Scenario: Create an empty cart and fill it
+    - Given a cart
+    - when the cart is empty
+    - when I add an item
+    - then the cart is not empty
+- 
