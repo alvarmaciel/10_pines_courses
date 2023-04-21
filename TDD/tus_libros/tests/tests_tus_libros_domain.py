@@ -26,7 +26,7 @@ class CartTestCase(unittest.TestCase):
         self.assertFalse(cart.is_empty())
         self.assertEqual(len(cart._books), 2)
 
-    def test_a_cart_with_books_gets_empty_after_x_lapse_of_time(self):
+    def test_a_cart_with_books_gets_empty_after_30_minutes_of_creation(self):
         a_isbn = "1"
         another_isbn = "1a"
         cart = Cart()
@@ -37,6 +37,17 @@ class CartTestCase(unittest.TestCase):
         with freeze_time((created_at + delta)):
             self.assertTrue(cart.is_empty())
 
+
+    def test_a_cart_with_books_not_empty_after_29_minutes_of_creation(self):
+        a_isbn = "1"
+        another_isbn = "1a"
+        cart = Cart()
+        cart.add(a_isbn)
+        cart.add(another_isbn)
+        delta = timedelta(minutes=29)
+        created_at = cart._created_at
+        with freeze_time((created_at + delta)):
+            self.assertFalse(cart.is_empty())
 
 
 if __name__ == '__main__':
