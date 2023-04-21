@@ -25,6 +25,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_H(self):
         self.assertEqual(self.convert_to_roman_string(8), "VIII")
+
     def test_I(self):
         self.assertEqual(self.convert_to_roman_string(9), "IX")
 
@@ -38,6 +39,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_L(self):
         self.assertEqual(self.convert_to_roman_string(14), "XIV")
+
     def test_M(self):
         self.assertEqual(self.convert_to_roman_string(15), "XV")
         self.assertEqual(self.convert_to_roman_string(16), "XVI")
@@ -73,7 +75,7 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(self.convert_to_roman_string(88), "LXXXVIII")
         self.assertEqual(self.convert_to_roman_string(99), "XCIX")
 
-    def convert_to_roman_string(self, number_to_convert: int)->str:
+    def convert_to_roman_string(self, number_to_convert: int) -> str:
         result = ""
         result = self.convert_digit(number_to_convert)
         if 10 <= number_to_convert <= 19:
@@ -84,7 +86,7 @@ class MyTestCase(unittest.TestCase):
             result = "XXX" + self.convert_digit(number_to_convert % 30)
         return result
 
-    def convert_digit(self, number_to_convert: int)->str:
+    def convert_digit(self, number_to_convert: int) -> str:
         result = ""
         if 1 <= number_to_convert <= 3:
             result = self.dame_palitos(number_to_convert)
@@ -96,7 +98,7 @@ class MyTestCase(unittest.TestCase):
             result = "IX"
         return result
 
-    def dame_palitos(self, number_to_convert: int)->str:
+    def dame_palitos(self, number_to_convert: int) -> str:
         result = ""
         for i in range(number_to_convert):
             result += "I"
