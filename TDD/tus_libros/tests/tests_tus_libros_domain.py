@@ -5,6 +5,7 @@ from TDD.tus_libros.domain.cashier import Cashier
 
 
 class ShoppingTest(unittest.TestCase):
+
     def test_cart_is_created_empty(self):
         self.assertTrue(self.create_cart().is_empty())
 
@@ -80,10 +81,13 @@ class ShoppingTest(unittest.TestCase):
         cart.add(self.another_valid_product(), 2)
         cashier = self.create_cashier()
         self.assertEqual(cashier.amount_of_cart(cart), 30)
+
+    def create_catalog(self):
+        return {self.valid_product(): 10, self.another_valid_product():5}
     def create_cashier(self):
-        return Cashier({self.valid_product(): 10, self.another_valid_product():5})
+        return Cashier(self.create_catalog())
     def create_cart(self):
-        return Cart({self.valid_product(): 10, self.another_valid_product():5})
+        return Cart(self.create_catalog())
 
     def valid_product(self):
         return "ISBN1"

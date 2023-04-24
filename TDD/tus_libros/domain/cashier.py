@@ -13,7 +13,7 @@ class Cashier:
 
     def amount_of_cart(self, cart) -> int:
         amount = 0
-        for product in cart._products:
+        for product in cart.get_all_products():
             amount += self._catalog[product]
         return amount
 

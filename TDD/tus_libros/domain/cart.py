@@ -27,5 +27,8 @@ class Cart:
     def countOf(self, product):
         return self._products.count(product)
 
-    def get_total_products(self) -> list[str]:
+    def get_total_products(self) -> int:
         return len(self._products)
+
+    def get_all_products(self) -> list[str]:
+        return self._products
