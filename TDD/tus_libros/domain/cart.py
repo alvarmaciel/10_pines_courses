@@ -1,9 +1,12 @@
+from abc import ABCMeta
 from datetime import datetime, timedelta
 
-class Cart:
+
+class Cart(metaclass=ABCMeta):
     def __init__(self):
         self._books = []
         self._created_at = datetime.utcnow()
+
     def is_empty(self):
         delta = timedelta(minutes=30)
         if self._created_at + delta <= datetime.utcnow():
