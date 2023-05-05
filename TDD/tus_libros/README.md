@@ -31,6 +31,7 @@
     - when the cart is empty
     - when I add an item
     - then the cart is not empty
+
 # Segunda Iteración
 - TODO: Aplicar tarjeta de crédito
   - No permite tarjeta de credito vencida

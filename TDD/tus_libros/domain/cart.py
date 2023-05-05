@@ -32,3 +32,4 @@ class Cart:
 
     def get_all_products(self) -> list[str]:
         return self._products
+

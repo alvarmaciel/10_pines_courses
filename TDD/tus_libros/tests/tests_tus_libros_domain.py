@@ -1,8 +1,7 @@
 import unittest
 from datetime import date
+from domain.cart import Cart
 
-from TDD.tus_libros.domain.cart import Cart
-from TDD.tus_libros.domain.cashier import Cashier
 
 
 class ShoppingTest(unittest.TestCase):
