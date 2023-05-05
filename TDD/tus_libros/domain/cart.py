@@ -1,9 +1,35 @@
-from abc import ABCMeta
-class Cart(metaclass=ABCMeta):
-    def __init__(self):
-        self._books = []
-    def is_empty(self):
-        return len(self._books)==0
+class Cart:
+    INVALID_QUANTITY = "Quantity must a strictly positive integer"
+    INVALID_PRODUCT = "Invalid product"
 
-    def add(self, isbn):
-         self._books.append(isbn)
+    def __init__(self, catalog):
+        self._products = list()
+        self._catalog = catalog
+
+    def is_empty(self):
+        return len(self._products) == 0
+
+    def add(self, product, quantity=1):
+        self.assert_is_valid_product(product)
+        self.assert_is_valid_quantity(quantity)
+
+        for _ in range(quantity):
+            self._products.append(product)
+
+    def assert_is_valid_quantity(self, quantity):
+        if quantity < 1 or not isinstance(quantity, int):
+            raise Exception(Cart.INVALID_QUANTITY)
+
+    def assert_is_valid_product(self, product):
+        if not (product in self._catalog):
+            raise Exception(Cart.INVALID_PRODUCT)
+
+    def countOf(self, product):
+        return self._products.count(product)
+
+    def get_total_products(self) -> int:
+        return len(self._products)
+
+    def get_all_products(self) -> list[str]:
+        return self._products
+
