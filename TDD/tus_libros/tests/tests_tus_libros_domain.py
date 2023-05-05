@@ -155,6 +155,5 @@ class ShoppingTest(unittest.TestCase):
         return {"number": "1234567890123457", "expiration": f"{month}/{year}", "owner": "Juan Perez"}
 
 
-
 if __name__ == '__main__':
     unittest.main()
